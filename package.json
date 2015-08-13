@@ -11,5 +11,8 @@
 "repository": {
    "type": "git",
    "url": "https://github.com/Mithgol/rules-fe2hpt.git"
+},
+"dependencies": {
+   "ansi": "~0.3.0"
 }
 }
