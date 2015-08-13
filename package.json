@@ -1,0 +1,15 @@
+{
+"name": "rules-fe2hpt",
+"main": "fe2h-api.js",
+"bin": "./rules-fe2hpt.js",
+"preferGlobal": true,
+"version": "0.0.1",
+"description": "Renames echomail area rules (prepared for FastEcho) using HPT filename format.",
+"keywords": ["Fidonet", "echomail", "area", "areas", "rules", "HPT", "FastEcho"],
+"author": { "name": "Mithgol the Webmaster" },
+"license": "MIT",
+"repository": {
+   "type": "git",
+   "url": "https://github.com/Mithgol/rules-fe2hpt.git"
+}
+}
