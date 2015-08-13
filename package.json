@@ -14,5 +14,8 @@
 },
 "dependencies": {
    "ansi": "~0.3.0"
+},
+"scripts": {
+   "test": "jshint --verbose rules-fe2hpt.js fe2h-api.js"
 }
 }

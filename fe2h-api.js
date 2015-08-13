@@ -124,16 +124,16 @@ module.exports = function(workingDir, options){
          if( options.rusMode ){
             logOK([
                'Файл ',
-               fileName,
+               nextFilename,
                ' переименован в ',
-               fileNewName
+               newName
             ].join(''));
          } else {
             logOK([
                'File ',
-               fileName,
+               nextFilename,
                ' is renamed to ',
-               fileNewName
+               newName
             ].join(''));
          }
       }
