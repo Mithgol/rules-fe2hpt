@@ -3,7 +3,7 @@
 "main": "fe2h-api.js",
 "bin": "./rules-fe2hpt.js",
 "preferGlobal": true,
-"version": "0.0.1",
+"version": "0.1.0",
 "description": "Renames echomail area rules (prepared for FastEcho) using HPT filename format.",
 "keywords": ["Fidonet", "echomail", "area", "areas", "rules", "HPT", "FastEcho"],
 "author": { "name": "Mithgol the Webmaster" },
