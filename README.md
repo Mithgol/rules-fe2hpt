@@ -26,6 +26,12 @@ You may now move that directory (for example, on a flash drive) across syst
 
 Unlike the above (`npm -g`), the application does not appear in the `PATH`, and thus you'll have to run it directly from the application's directory. You'll also have to run `node rules-fe2hpt [parameters]` instead of `rules-fe2hpt [parameters]`.
 
+## Running rules-fe2hpt
+
+Run rules-fe2hpt in the directory that contains FastEcho-prepared rules; they'll be renamed using HPT-compliant format.
+
+You may add the parameter `--rus` for rules-fe2hpt to display Russian messages instead of English.
+
 ## Testing rules-fe2hpt
 
 [![(build testing status)](https://img.shields.io/travis/Mithgol/rules-fe2hpt/master.svg?style=plastic)](https://travis-ci.org/Mithgol/rules-fe2hpt)
