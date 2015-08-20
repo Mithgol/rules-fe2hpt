@@ -32,6 +32,8 @@ Run rules-fe2hpt in the directory that contains FastEcho-prepared rules; they
 
 You may add the parameter `--rus` for rules-fe2hpt to display Russian messages instead of English.
 
+You may add the parameter `--log=logFilename` if you need a permanent copy of the application's messages stored in the designated file.
+
 ## Testing rules-fe2hpt
 
 [![(build testing status)](https://img.shields.io/travis/Mithgol/rules-fe2hpt/master.svg?style=plastic)](https://travis-ci.org/Mithgol/rules-fe2hpt)
