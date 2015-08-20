@@ -88,7 +88,7 @@ module.exports = function(workingDir, options){
          }
          return;
       }
-      if(!( /^[A-Za-z0-9&._-]+$/.test(firstLineParts[1]) )){
+      if(!( /^[A-Za-z0-9!#&$._'-]+$/.test(firstLineParts[1]) )){
          if( options.rusMode ){
             logSKIP([
                'Эхотаг ',
