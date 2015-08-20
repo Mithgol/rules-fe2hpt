@@ -88,6 +88,22 @@ module.exports = function(workingDir, options){
          }
          return;
       }
+      if(!( /^[A-Za-z0-9&._-]+$/.test(firstLineParts[1]) )){
+         if( options.rusMode ){
+            logSKIP([
+               'Эхотаг ',
+               firstLineParts[1],
+               ' выглядит содержащим неверные символы. Пропущен.'
+            ].join(''));
+         } else {
+            logSKIP([
+               'Echotag ',
+               firstLineParts[1],
+               ' seem to contain wrong characters. Skipped.'
+            ].join(''));
+         }
+         return;
+      }
       var newName = firstLineParts[1].toUpperCase().replace(
          /\./g, '_'
       ) + '.rul';
