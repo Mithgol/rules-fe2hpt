@@ -2,27 +2,45 @@ var fs = require('fs');
 var path = require('path');
 var ansi = require('ansi')(process.stdout);
 
-var logOK = function(logElement){
-   ansi.black().bg.green().write('  OK  ').reset().write(' ');
-   console.log(logElement);
-};
-
-var logFAIL = function(logElement){
-   ansi.brightWhite().bg.red().write(' FAIL ').reset().write(' ');
-   console.log(logElement);
-};
-
-var logDUPE = function(logElement){
-   ansi.brightCyan().bg.magenta().write(' DUPE ').reset().write(' ');
-   console.log(logElement);
-};
-
-var logSKIP = function(logElement){
-   ansi.brightGreen().bg.blue().write(' SKIP ').reset().write(' ');
-   console.log(logElement);
-};
-
 module.exports = function(workingDir, options){
+   var logFile = options.logFile;
+
+   var logOK = function(logElement){
+      ansi.black().bg.green().write('  OK  ').reset().write(' ');
+      console.log(logElement);
+      if( logFile !== null ){
+         fs.appendFileSync(logFile, '[  OK  ] ', { encoding: 'utf8' });
+         fs.appendFileSync(logFile, logElement + '\n', { encoding: 'utf8' });
+      }
+   };
+
+   var logFAIL = function(logElement){
+      ansi.brightWhite().bg.red().write(' FAIL ').reset().write(' ');
+      console.log(logElement);
+      if( logFile !== null ){
+         fs.appendFileSync(logFile, '[ FAIL ] ', { encoding: 'utf8' });
+         fs.appendFileSync(logFile, logElement + '\n', { encoding: 'utf8' });
+      }
+   };
+
+   var logDUPE = function(logElement){
+      ansi.brightCyan().bg.magenta().write(' DUPE ').reset().write(' ');
+      console.log(logElement);
+      if( logFile !== null ){
+         fs.appendFileSync(logFile, '[ DUPE ] ', { encoding: 'utf8' });
+         fs.appendFileSync(logFile, logElement + '\n', { encoding: 'utf8' });
+      }
+   };
+
+   var logSKIP = function(logElement){
+      ansi.brightGreen().bg.blue().write(' SKIP ').reset().write(' ');
+      console.log(logElement);
+      if( logFile !== null ){
+         fs.appendFileSync(logFile, '[ SKIP ] ', { encoding: 'utf8' });
+         fs.appendFileSync(logFile, logElement + '\n', { encoding: 'utf8' });
+      }
+   };
+
    var usedNames = [];
    var filenames = fs.readdirSync(workingDir);
    filenames.forEach(function(nextFilename){
